@@ -9,12 +9,14 @@
                 <div class="row">
                     {% for image in category.image_set.all %}
                         <div class="col-md-4">
-                            <div class="card mb-4">
-                                <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.title }}">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ image.title }}</h5>
+                            <a href="{% url 'image_detail' image.id %}" class="text-decoration-none">
+                                <div class="card mb-4">
+                                    <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.title }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ image.title }}</h5>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
